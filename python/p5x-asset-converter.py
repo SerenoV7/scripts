@@ -1,8 +1,8 @@
-# This script can be used on P5X CBT2 AssetBundle files
+# This script can be used on P5X CBT2 and CBT3 AssetBundle files
 # These files have a dummy encryption that makes them unreadable to programs like AssetStudio
 # This script simply makes it so these programs can read the AssetBundles correctly
 
-# Simply place this script inside ../P5X/client/bin/Bundles and it'll automatically convert all the AssetBundles
+# Simply place this script inside ../client/bin/Bundles and it'll automatically convert all the AssetBundles
 
 import os
 import threading
@@ -22,7 +22,7 @@ def process_bundle_file(file_path):
     with open(file_path, 'wb') as file:
         file.write(modified_content)
 
-    print(f"Converted: {file_path}")
+    print(f"Finished converting {file_path}")
 
 def process_directory(directory, num_threads):
     for root, _, files in os.walk(directory):
